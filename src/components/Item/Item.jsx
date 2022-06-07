@@ -3,11 +3,12 @@ import {Button, ButtonGroup} from "react-bootstrap";
 import "./Item.css"
 
 function Item() {
-
+    const stock = 5;
     const [count, setCount] = useState(0);
 
     function increment() {
-        setCount(count + 1);
+        if (count < stock)
+            setCount(count + 1);
     }
 
     function decrement() {
