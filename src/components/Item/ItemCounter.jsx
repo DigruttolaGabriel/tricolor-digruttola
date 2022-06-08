@@ -1,13 +1,12 @@
 import {useState} from "react";
 import {Button, ButtonGroup} from "react-bootstrap";
-import "./Item.css"
+import "../Item/ItemCounter.css"
 
-function Item() {
-    const stock = 5;
+function ItemCounter(props) {
     const [count, setCount] = useState(0);
 
     function increment() {
-        if (count < stock)
+        if (count < props.stock)
             setCount(count + 1);
     }
 
@@ -27,4 +26,4 @@ function Item() {
     );
 }
 
-export default Item;
+export default ItemCounter;
