@@ -4,16 +4,8 @@ import "../Item/ItemCounter.css"
 
 function ItemCounter(props) {
     const [count, setCount] = useState(0);
-
-    function increment() {
-        if (count < props.stock)
-            setCount(count + 1);
-    }
-
-    function decrement() {
-        if (count > 0)
-            setCount(count - 1);
-    }
+    const increment = () => count < props.stock && setCount(count + 1)
+    const decrement = () => count > 0 && setCount(count - 1)
 
     return (
         <div>
