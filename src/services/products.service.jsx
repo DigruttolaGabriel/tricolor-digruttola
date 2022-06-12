@@ -36,7 +36,8 @@ export const fetchData = () => {
 }
 
 export const findById = (id) => {
+    const parsedId = parseInt(id);
     return new Promise(resolve => {
-        setTimeout(resolve(data.find(item => item.id === id)), 2000);
+        setTimeout(resolve(data.find(item => item.id === parsedId)), 2000);
     })
 }

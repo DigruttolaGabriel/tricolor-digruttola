@@ -1,8 +1,8 @@
-import ItemList from "../../Item/ItemList";
+import ItemList from "../../presentationals/item-list/item-list";
 import {useEffect, useState} from "react";
 import {fetchData} from "../../../services/products.service";
 
-function ItemListContainer(props) {
+const ItemListContainer = (props) => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
