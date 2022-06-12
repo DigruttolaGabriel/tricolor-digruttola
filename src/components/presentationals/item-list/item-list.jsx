@@ -1,6 +1,6 @@
-import ItemCard from "../presentationals/item-card/ItemCard";
+import ItemCard from "../item-card/item-card";
 
-function ItemList(props) {
+const ItemList = (props) => {
     return (
         <div style={{ display:"flex"}}>
             {

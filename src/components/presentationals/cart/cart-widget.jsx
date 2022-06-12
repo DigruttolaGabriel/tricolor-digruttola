@@ -1,6 +1,6 @@
-import "./CartWidget.css"
+import "./cart-widget.css"
 
-function CartWidget() {
+const CartWidget = () => {
     return (
         <div>
             <i className="bi bi-cart navbar-icon"></i>

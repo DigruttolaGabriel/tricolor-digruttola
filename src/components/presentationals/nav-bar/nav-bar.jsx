@@ -1,7 +1,7 @@
-import "./NavBar.css"
-import CartWidget from "../Cart/CartWidget";
+import "./nav-bar.css"
+import CartWidget from "../cart/cart-widget";
 
-function NavBar() {
+const NavBar = () => {
     return (
         <div>
             <ul>
