@@ -1,9 +1,8 @@
 import {Card} from "react-bootstrap";
-import "../Item/ItemCounter.css"
-import ItemCounter from "./ItemCounter";
+import "../../Item/ItemCounter.css"
+import ItemCounter from "../../Item/ItemCounter";
 
 function ItemCard({item}) {
-
     return (
         <div>
             <Card style={{ width: '18rem' }}>

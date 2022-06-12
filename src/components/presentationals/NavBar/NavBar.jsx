@@ -2,8 +2,6 @@ import "./NavBar.css"
 import CartWidget from "../Cart/CartWidget";
 
 function NavBar() {
-    const welcomeMessage = "Bienvenido al carrito"
-
     return (
         <div>
             <ul>
@@ -11,7 +9,7 @@ function NavBar() {
                 <li><a href="#products">Productos</a></li>
                 <li><a href="#contact">Contacto</a></li>
                 <li style={{ float: "right" }}><a className="active" href="#about">Tricolor</a></li>
-                <li style={{ float: "right" }}><CartWidget welcomeMessage = { welcomeMessage }/></li>
+                <li style={{ float: "right" }}><CartWidget/></li>
             </ul>
         </div>
     );
