@@ -1,6 +1,6 @@
 import ItemDetails from "../../presentationals/item-details/item-details";
 import {useEffect, useState} from "react";
-import {findById} from "../../../services/products.service";
+import {findProductById} from "../../../services/products.service";
 import {useParams} from "react-router-dom";
 
 const ItemDetailsContainer = () => {
@@ -8,11 +8,15 @@ const ItemDetailsContainer = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        findById(id)
+        findProductById(id)
             .then((p) => setProduct(p))
     }, []);
 
-    return <ItemDetails product={product}/>
-}
+    return (
+        <div className="container-fluid">
+            <ItemDetails product={product}/>
+        </div>
+    )
+};
 
 export default ItemDetailsContainer;
