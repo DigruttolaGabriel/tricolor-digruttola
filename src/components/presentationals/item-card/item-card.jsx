@@ -1,18 +1,23 @@
-import {Card} from "react-bootstrap";
+import {Button, Card} from "react-bootstrap";
 import "../item-counter/item-counter.css"
-import ItemCounterContainer from "../../containers/item-counter/item-counter.container";
+import {NavLink} from "react-router-dom";
 
 const ItemCard = (props) => {
     return (
         <div>
             <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={props.item.photo} />
                 <Card.Body>
                     <Card.Title>{props.item.name}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
+                    <Card.Text>
+                        {props.item.description}
+                    </Card.Text>
                     <Card.Text>
                         $ {props.item.price}
                     </Card.Text>
-                    <ItemCounterContainer stock={props.item.stock}/>
+                    <NavLink to={`/product/${props.item.id}`} className="link-no-decoration">
+                        <Button variant="primary">Ver detalle</Button>
+                    </NavLink>
                 </Card.Body>
             </Card>
         </div>

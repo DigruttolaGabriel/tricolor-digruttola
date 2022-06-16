@@ -1,11 +1,10 @@
 import ItemCard from "../item-card/item-card";
-import {Link, NavLink} from "react-router-dom";
 
 const ItemList = (props) => {
     return (
-        <div style={{ display:"flex"}}>
+        <div className="d-flex justify-content-around">
             {
-                props.items.map(item => (<NavLink to={`/products/${item.id}`}><ItemCard key={item.id} item={item} /></NavLink>))
+                props.items.map(item => (<ItemCard key={item.id} item={item} />))
             }
         </div>
     );

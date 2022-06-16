@@ -1,23 +1,31 @@
 import ItemList from "../../presentationals/item-list/item-list";
 import {useEffect, useState} from "react";
-import {fetchData} from "../../../services/products.service";
+import {fetchProducts, findProductByCategory} from "../../../services/products.service";
+import {useParams} from "react-router-dom";
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
     const [items, setItems] = useState([]);
+    const { id } = useParams();
 
     useEffect(() => {
-        fetchData()
-            .then((data) => {
-                setItems(data);
-            });
-    }, [])
+        id
+            ?
+            findProductByCategory(id)
+                .then((data) => {
+                    setItems(data)
+                })
+            :
+            fetchProducts()
+                .then((data) => {
+                    setItems(data);
+                });
+    }, [id])
 
     return (
-        <div>
-            <h2>{ props.welcomeMessage }</h2>
+        <div className="container-fluid mt-50">
             <ItemList items={items}/>
         </div>
-    );
-}
+    )
+};
 
 export default ItemListContainer;
