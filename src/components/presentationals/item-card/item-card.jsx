@@ -15,7 +15,7 @@ const ItemCard = (props) => {
                     <Card.Text>
                         $ {props.item.price}
                     </Card.Text>
-                    <NavLink to={`/products/${props.item.id}`} className="link-no-decoration">
+                    <NavLink to={`/product/${props.item.id}`} className="link-no-decoration">
                         <Button variant="primary">Ver detalle</Button>
                     </NavLink>
                 </Card.Body>

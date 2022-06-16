@@ -1,0 +1,17 @@
+.link-no-decoration {
+  text-decoration: none;
+  color: black;
+}
+
+.link-no-decoration:hover {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}

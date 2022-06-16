@@ -10,10 +10,10 @@ const ItemDetailsContainer = () => {
     useEffect(() => {
         findProductById(id)
             .then((p) => setProduct(p))
-    }, []);
+    });
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid mt-50">
             <ItemDetails product={product}/>
         </div>
     )

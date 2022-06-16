@@ -5,7 +5,7 @@ import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {useState} from "react";
 
 const NavBar = (props) => {
-    const [showDropdown, setShowDropdown] = useState(false);
+    //const [showDropdown, setShowDropdown] = useState(false);
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -15,6 +15,7 @@ const NavBar = (props) => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <NavDropdown title="Productos" id="collasible-nav-dropdown">
+                                <NavDropdown.Item to={"/products"} as={NavLink}>Todos</NavDropdown.Item>
                                 {
                                     props.categories ? props.categories.map(c => (
                                         <NavDropdown.Item key={c.id} to={`/products/category/${c.id}`} as={NavLink}>

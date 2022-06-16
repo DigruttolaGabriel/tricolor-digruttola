@@ -19,10 +19,10 @@ const ItemListContainer = () => {
                 .then((data) => {
                     setItems(data);
                 });
-    }, [])
+    }, [id])
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid mt-50">
             <ItemList items={items}/>
         </div>
     )
