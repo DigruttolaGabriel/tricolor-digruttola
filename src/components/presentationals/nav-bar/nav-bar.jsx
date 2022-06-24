@@ -26,7 +26,7 @@ const NavBar = (props) => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Nav.Link><CartWidget/></Nav.Link>
+                            <NavLink to={"/cart"}><CartWidget/></NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

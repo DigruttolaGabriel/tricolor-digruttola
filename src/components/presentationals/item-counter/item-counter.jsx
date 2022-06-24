@@ -9,6 +9,7 @@ const ItemCounter = (props) => {
                 <span id="count-text">{props.count}</span>
                 <Button variant="primary" onClick={props.increment}>+</Button>
             </ButtonGroup>
+            <Button variant="primary" onClick={props.addProductToCart}>Agregar al carrito</Button>
         </div>
     );
 }
