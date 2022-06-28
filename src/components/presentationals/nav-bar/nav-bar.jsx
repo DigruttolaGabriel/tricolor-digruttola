@@ -1,8 +1,8 @@
 import "./nav-bar.css"
-import CartWidget from "../cart-widget/cart-widget";
 import {NavLink} from "react-router-dom";
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {useState} from "react";
+import CartWidgetContainer from "../../containers/nav-bar/cart-widget.container";
 
 const NavBar = (props) => {
     //const [showDropdown, setShowDropdown] = useState(false);
@@ -26,7 +26,7 @@ const NavBar = (props) => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <NavLink to={"/cart"}><CartWidget/></NavLink>
+                            <NavLink to={"/cart"}><CartWidgetContainer/></NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

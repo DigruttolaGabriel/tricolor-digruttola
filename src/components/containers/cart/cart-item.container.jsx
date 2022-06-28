@@ -9,7 +9,7 @@ const CartItemContainer = (props) => {
     }
 
     return (
-        <div className="container-fluid mt-50">
+        <div className="d-flex flex-column">
             <CartItem item={props.item} removeProductFromCart={removeProductFromCart}/>
         </div>
     )
