@@ -11,14 +11,12 @@ const ItemListContainer = () => {
         id
             ?
             findProductByCategory(id)
-                .then((data) => {
-                    setItems(data)
-                })
+                .then(data => setItems(data.docs.map(item => ({ id: item.id, ...item.data() }))))
+                .catch(error => console.log(error))
             :
             fetchProducts()
-                .then((data) => {
-                    setItems(data);
-                });
+                .then(data => setItems(data.docs.map(item => ({ id: item.id, ...item.data() }))))
+                .catch(error => console.log(error));
     }, [id])
 
     return (

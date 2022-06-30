@@ -11,7 +11,8 @@ const ItemDetailsContainer = () => {
 
     useEffect(() => {
         findProductById(id)
-            .then((p) => setProduct(p))
+            .then((data) => setProduct({ id: data.id, ...data.data() }))
+            .catch((error) => console.log(error));
     });
 
     const addProductToCart = (quantity) => addToCart({...product, quantity: quantity})
