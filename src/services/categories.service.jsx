@@ -1,20 +1,7 @@
-const categories = [
-    {
-        id: "1",
-        name: "1"
-    },
-    {
-        id: "2",
-        name: "2"
-    },
-    {
-        id: "3",
-        name: "3"
-    }
-]
+import {collection, getDocs, getFirestore, orderBy, query} from "firebase/firestore";
 
 export const fetchCategories = () => {
-    return new Promise(resolve => {
-        setTimeout(resolve(categories), 2000);
-    });
+    const db = getFirestore();
+    const queryCollection = collection(db, "categories");
+    return getDocs(query(queryCollection, orderBy("name", "asc")));
 }

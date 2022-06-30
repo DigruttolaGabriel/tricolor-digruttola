@@ -7,14 +7,13 @@ const NavBarContainer = () => {
 
     useEffect(() => {
         fetchCategories()
-            .then((data) => {
-                setCategories(data);
-            });
-    }, [])
+            .then(data => setCategories(data.docs.map(item => ({ id: item.id, ...item.data() }))))
+            .catch(error => console.log(error));
+    }, []);
 
     return (
         <NavBar categories={categories}/>
-    )
+    );
 }
 
 export default NavBarContainer;

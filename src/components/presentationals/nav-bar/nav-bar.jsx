@@ -18,7 +18,7 @@ const NavBar = (props) => {
                                 <NavDropdown.Item to={"/products"} as={NavLink}>Todos</NavDropdown.Item>
                                 {
                                     props.categories ? props.categories.map(c => (
-                                        <NavDropdown.Item key={c.id} to={`/products/category/${c.id}`} as={NavLink}>
+                                        <NavDropdown.Item key={c.id} to={`/products/category/${c.name}`} as={NavLink}>
                                             {c.name}
                                         </NavDropdown.Item>
                                     )) : ""
