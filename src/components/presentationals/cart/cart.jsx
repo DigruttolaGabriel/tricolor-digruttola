@@ -1,6 +1,7 @@
 import CartItemContainer from "../../containers/cart/cart-item.container";
 import {Alert, Button} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
+import ErrorPage from "../error/error-page/error-page";
 
 const Cart = (props) => {
     return(
@@ -22,14 +23,8 @@ const Cart = (props) => {
                             Total : {props.total}
                         </h3>
                         <Button variant="primary" onClick={props.generateOrder}>Generar orden</Button>
-                    </div>
-                    :
-                    <div className="d-flex flex-column justify-content-center align-items-center">
-                        <h4 className="my-3">No hay productos actualemente</h4>
-                        <NavLink to={"/products"} className="link-no-decoration">
-                            <Button variant="primary">Volver a la tienda</Button>
-                        </NavLink>
-                    </div>
+                    </div> :
+                    <ErrorPage message="No hay productos seleccionados actualmente"/>
             }
         </div>
     )
