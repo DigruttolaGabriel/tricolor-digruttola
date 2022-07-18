@@ -5,7 +5,7 @@ import {generateNewOrder} from "../../../services/orders.service";
 import {updateProductsOrderStockBatch} from "../../../services/products.service";
 
 const CartContainer = () => {
-    const { cart } = useCartContext();
+    const { cart, resetCart } = useCartContext();
     const [total, setTotal] = useState(0);
     const [orderId, setOrderId] = useState("");
 
@@ -15,11 +15,15 @@ const CartContainer = () => {
         }, 0))
     }, [cart])
 
-    async function generateOrder(e) {
-        e.preventDefault();
+    async function generateOrder(client) {
         let order = {};
 
-        order.client = {name: "name", email: "email"};
+        order.client = {
+            name: client.name,
+            lastname: client.lastname,
+            phone: client.phone,
+            email: client.email
+        };
 
         order.items = cart.map(item => {
             const id = item.id;
@@ -34,6 +38,8 @@ const CartContainer = () => {
             .then(resp => setOrderId(resp.id));
 
         await updateProductsOrderStockBatch(order);
+
+        resetCart();
     }
 
     return (

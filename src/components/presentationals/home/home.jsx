@@ -1,7 +1,7 @@
 const Home = () => {
     return(
-        <div className="d-flex flex-column align-items-center">
-            <h2>Welcome to Jurassic Park</h2>
+        <div className="d-flex flex-column align-items-center mt-3">
+            <h2>Bienvenido!</h2>
         </div>
     )
 }
