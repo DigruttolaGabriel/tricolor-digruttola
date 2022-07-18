@@ -1,11 +1,9 @@
 import "./nav-bar.css"
 import {NavLink} from "react-router-dom";
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import {useState} from "react";
 import CartWidgetContainer from "../../containers/nav-bar/cart-widget.container";
 
 const NavBar = (props) => {
-    //const [showDropdown, setShowDropdown] = useState(false);
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
